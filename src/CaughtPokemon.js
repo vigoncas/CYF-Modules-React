@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
 function CaughtPokemon(props) {
+
+    const [caught, setCaught] = useState(0);
+
+    function catchCliked() {
+        setCaught(caught + 1);
+    }
+
     return (
-        <p>Caught 0 Pokemon on {props.date}</p>
+        <p>Caught {caught} Pokemon on {props.date} <button onClick={catchCliked}>Catch</button></p>
     );
 }
 
